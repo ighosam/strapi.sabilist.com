@@ -26,4 +26,3 @@ jobs:
           cd /home/sabilist/strapi.sabilist.com/
           git pull origin main
           git status
-          npm install
