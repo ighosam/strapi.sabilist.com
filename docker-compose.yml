@@ -1,7 +1,7 @@
 version: "3"
 services:
   strapi:
-    container_name: strapi
+    container_name: strapi_fin
     build: .
     image: strapi:latest
     restart: unless-stopped
@@ -11,7 +11,7 @@ services:
       DATABASE_HOST: strapiDB
       DATABASE_PORT: ${DATABASE_PORT}
       DATABASE_NAME: ${DATABASE_NAME}
-       DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
@@ -21,7 +21,7 @@ services:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
       - ./package.json:/opt/package.json
-      - ./yarn.lock:/opt/yarn.lock
+     # - ./yarn.lock:/opt/yarn.lock
       - ./.env:/opt/app/.env
       - ./public/uploads:/opt/app/public/uploads
     labels:
